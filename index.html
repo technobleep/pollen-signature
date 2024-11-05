@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pollen &mdash; Team Email Signatures</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, Sans-Serif;
+      }
+
+      html {
+        height: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+      }
+
+      body {
+        min-height: 100%;
+        background: #f2f2f2;
+      }
+
+      header {
+        width: 100%;
+        background: #fff;
+        padding: 30px 30px;
+        border-bottom: 1px solid #eaeaea;
+      }
+
+      main {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .team-member,
+      .team-member-details {
+        display: block;
+        max-width: 500px;
+        margin: 60px auto 60px auto;
+      }
+
+      .team-member p,
+      .team-member-details p {
+        color: #777;
+        max-width: 80%;
+        font-size: 14px;
+        text-align: center;
+        font-weight: normal;
+        margin: 0 auto 20px auto;
+      }
+
+      .form,
+      .signature-container {
+        width: 100%;
+        padding: 66px;
+        background: #fff;
+        box-sizing: border-box;
+        border: 1px solid #eaeaea;
+      }
+
+      .team-member-details {
+        margin-bottom: 0;
+      }
+
+      .form .field {
+        margin-bottom: 20px;
+      }
+
+      .form .field input {
+        color: #444;
+        display: block;
+        font-size: 16px;
+        min-width: 250px;
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      .form .field .help-text {
+        color: #999;
+        display: block;
+        padding: 0 5px;
+        margin-top: 5px;
+        font-size: 12px;
+      }
+
+      .form .footer {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .form .submit-button {
+        border: none;
+        color: #fff;
+        padding: 12px;
+        font-weight: 700;
+        border-radius: 4px;
+        background-color: #09cc8f;
+      }
+
+      .signature-container {
+        margin: 0;
+        -webkit-user-select: all; /* Chrome all / Safari all */
+        -moz-user-select: all; /* Firefox all */
+        -ms-user-select: all; /* IE 10+ */
+        user-select: all;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img
+        src="http://pollen-signature.s3-ap-southeast-2.amazonaws.com/pollen-logo%402x.png"
+        border="0"
+        width="96"
+        height="36"
+        alt="Pollen"
+      />
+    </header>
+    <main>
+      <div class="team-member-details">
+        <p>Edit name, job title and mobile number as required.</p>
+        <form id="details-form" class="form">
+          <div class="field">
+            <input
+              id="name-input"
+              name="name-input"
+              type="text"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div class="field">
+            <input
+              id="job-title-input"
+              name="job-title-input"
+              type="text"
+              placeholder="Job title"
+              required
+            />
+          </div>
+          <div class="field">
+            <input
+              id="mobile-input"
+              name="mobile-input"
+              type="tel"
+              pattern="[0-9]{4} [0-9]{3} [0-9]{3}"
+              placeholder="Mobile (optional)"
+            />
+            <small class="help-text">Format: 1234 567 890</small>
+          </div>
+          <div class="footer">
+            <button class="submit-button" type="submit">Update details</button>
+          </div>
+        </form>
+      </div>
+      <div class="team-member">
+        <p>Copy and paste the text below into your email client.</p>
+        <div class="signature-container">
+          <table
+            class="signature"
+            style="border-collapse: collapse; border-spacing: 0"
+          >
+            <tr>
+              <td
+                style="
+                  padding: 0;
+                  padding-bottom: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  color: #111111;
+                  font-size: 12px;
+                  -webkit-text-size-adjust: none;
+                "
+              >
+                <!-- Contact Details -->
+                <table
+                  class="contact-details"
+                  style="border-collapse: collapse; border-spacing: 0"
+                >
+                  <tr>
+                    <td
+                      class="text-large"
+                      style="
+                        padding: 0;
+                        padding-bottom: 1px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 13px;
+                        -webkit-text-size-adjust: none;
+                      "
+                    >
+                      <span
+                        class="bold text-large"
+                        style="
+                          font-family: Helvetica, Arial, Sans-Serif;
+                          color: #111111;
+                          font-size: 12px;
+                          -webkit-text-size-adjust: none;
+                          font-weight: bold;
+                        "
+                        ><strong id="name-value" style="font-weight: bold"
+                          >Name</strong
+                        ></span
+                      >&nbsp;&bull;&nbsp;<span
+                        id="job-title-value"
+                        class="text-large"
+                        style="
+                          font-family: Helvetica, Arial, Sans-Serif;
+                          color: #111111;
+                          font-size: 12px;
+                          -webkit-text-size-adjust: none;
+                        "
+                        >Job Title</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        padding: 0;
+                        padding-bottom: 8px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 12px;
+                        -webkit-text-size-adjust: none;
+                      "
+                    >
+                      <span
+                        id="mobile-value"
+                        style="
+                          color: #111111;
+                          font-family: monospace;
+                          font-size: 12px;
+                          -webkit-text-size-adjust: none;
+                        "
+                        >T 02 8394 9571</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+                <div
+                  style="border-bottom: 1px solid black; padding-top: 20px"
+                ></div>
+                <!-- Logo -->
+                <table
+                  class="pollen-logo"
+                  style="border-collapse: collapse; border-spacing: 0"
+                >
+                  <tr>
+                    <td
+                      width="300"
+                      height="1"
+                      class="spacer-10"
+                      style="
+                        padding: 0;
+                        padding-bottom: 1px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 12px;
+                        -webkit-text-size-adjust: none;
+                        line-height: 12px;
+                      "
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        padding: 0;
+                        padding-bottom: 8px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 11px;
+                        -webkit-text-size-adjust: none;
+                      "
+                    >
+                      <a
+                        href="http://pollen.com.au?utm_source=email&utm_medium=staff-email&utm_content=pollen-site&utm_campaign=signature"
+                        target="_blank"
+                        style="
+                          font-family: Helvetica, Arial, Sans-Serif;
+                          color: #3d85c6;
+                          font-size: 11px;
+                          -webkit-text-size-adjust: none;
+                          text-decoration: none;
+                          transition: all 0.2s;
+                        "
+                      >
+                        <img
+                          src="https://pollen-signature.s3-ap-southeast-2.amazonaws.com/pollen-logo%402x.png"
+                          border="0"
+                          height="40"
+                          alt="Pollen"
+                        />
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        padding: 0;
+                        padding-bottom: 5px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 11px;
+                        -webkit-text-size-adjust: none;
+                      "
+                    >
+                      <a
+                        href="http://pollen.com.au?utm_source=email&utm_medium=staff-email&utm_content=pollen-site&utm_campaign=signature"
+                        target="_blank"
+                        class="text-medium"
+                        style="
+                          font-family: Helvetica, Arial, Sans-Serif;
+                          color: #111111;
+                          font-size: 11px;
+                          -webkit-text-size-adjust: none;
+                          text-decoration: none;
+                          transition: all 0.2s;
+                        "
+                        >pollen.com.au</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      height="1"
+                      class="spacer-10"
+                      style="
+                        padding: 0;
+                        padding-bottom: 1px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 10px;
+                        -webkit-text-size-adjust: none;
+                        line-height: 10px;
+                      "
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                  <!-- Social and Latest Work -->
+                  <tr>
+                    <td
+                      style="
+                        padding: 0;
+                        padding-bottom: 8px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 11px;
+                        -webkit-text-size-adjust: none;
+                        line-height: 130%;
+                      "
+                    >
+                      <span
+                        class="text-medium"
+                        style="
+                          font-family: Helvetica, Arial, Sans-Serif;
+                          color: #111111;
+                          font-size: 10px;
+                          -webkit-text-size-adjust: none;
+                        "
+                        >Currently working with &mdash;<br />
+                        Arthritis NSW • MCA • CSIRO • ModiBodi • NSW Gov</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      height="1"
+                      class="spacer-10"
+                      style="
+                        padding: 0;
+                        padding-bottom: 1px;
+                        margin: 0;
+                        vertical-align: top;
+                        font-family: Helvetica, Arial, Sans-Serif;
+                        color: #111111;
+                        font-size: 12px;
+                        -webkit-text-size-adjust: none;
+                        line-height: 12px;
+                      "
+                    >
+                      &nbsp;
+                    </td>
+                  </tr>
+                </table>
+
+                <tr>
+                  <td
+                    width="300"
+                    height="1"
+                    class="border"
+                    style="
+                      padding: 0;
+                      padding-bottom: 1px;
+                      margin: 0;
+                      vertical-align: top;
+                      font-family: Helvetica, Arial, Sans-Serif;
+                      color: #111111;
+                      font-size: 1px;
+                      -webkit-text-size-adjust: none;
+                      border: none;
+                      border-top: 1px solid #111111;
+                      vline-height: 1px;
+                    "
+                  >
+                    &nbsp;
+                  </td>
+                </tr>
+              </td>
+            </tr>
+          </table>
+
+          <!-- feature -->
+          <table
+            class="acknowledgement"
+            style="border-collapse: collapse; border-spacing: 0"
+          >
+            <tr>
+              <td
+                colspan="3"
+                style="
+                  padding: 0;
+                  padding-top: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  font-size: 11px;
+                  -webkit-text-size-adjust: none;
+                "
+              >
+                <span
+                  class="text-medium"
+                  style="
+                    font-family: Helvetica, Arial, Sans-Serif;
+                    color: #111111;
+                    font-size: 11px;
+                    -webkit-text-size-adjust: none;
+                    line-height: 150%;
+                  "
+                  ><br />
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td
+                height="1"
+                colspan="3"
+                align="left"
+                valign="middle"
+                class="spacer-10"
+                style="
+                  padding: 0;
+                  padding-bottom: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  color: #111111;
+                  font-size: 12px;
+                  -webkit-text-size-adjust: none;
+                  line-height: 12px;
+                "
+              >
+                <table width="250" border="0">
+                  <tbody>
+                    <tr>
+                      <td style="padding-right: 18px">
+                        <a
+                          href="https://winners.webbyawards.com/2023/websites-and-mobile-sites/features-design/best-visual-design-aesthetic/252942/mud-australia"
+                          target="_blank"
+                          ><img
+                            src="https://pollen-signature.s3-ap-southeast-2.amazonaws.com/Award1x2.png"
+                            height="38"
+                        /></a>
+                      </td>
+                      <td style="padding-right: 10px">
+                        <a
+                          href="https://good-design.org/projects/mud-australia-website/"
+                          target="_blank"
+                          ><img
+                            src="https://pollen-signature.s3-ap-southeast-2.amazonaws.com/GDA%402x.png"
+                            height="34"
+                        /></a>
+                      </td>
+                      <td width="20"></td>
+                      <td>
+                        <a
+                          href="https://agda.com.au/agda-award/agda-design-awards-2023/finalist/digital/99815"
+                          target="_blank"
+                          ><img
+                            src="https://pollen-signature.s3.ap-southeast-2.amazonaws.com/AGDA2x.png"
+                            height="38"
+                        /></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td
+                height="1"
+                class="spacer-10"
+                style="
+                  padding: 0;
+                  padding-bottom: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  color: #111111;
+                  font-size: 12px;
+                  -webkit-text-size-adjust: none;
+                  line-height: 12px;
+                "
+              >
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td
+                width="300"
+                style="
+                  padding: 0;
+                  padding-top: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  font-size: 11px;
+                  -webkit-text-size-adjust: none;
+                "
+              >
+                <span
+                  class="text-medium"
+                  style="
+                    font-family: Helvetica, Arial, Sans-Serif;
+                    color: #111111;
+                    font-size: 10px;
+                    -webkit-text-size-adjust: none;
+                    line-height: 150%;
+                  "
+                >
+                  Mud Australia - Webby Honoree 2023 • Good Design Winner
+                  2022<br />
+                  Museums of History NSW - AGDA 2023 Finalist
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td
+                height="1"
+                class="spacer-10"
+                style="
+                  padding: 0;
+                  padding-bottom: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  color: #111111;
+                  font-size: 10px;
+                  -webkit-text-size-adjust: none;
+                  line-height: 10px;
+                "
+              >
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td
+                height="1"
+                class="spacer-10"
+                style="
+                  padding: 0;
+                  padding-bottom: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  color: #111111;
+                  font-size: 10px;
+                  -webkit-text-size-adjust: none;
+                  line-height: 10px;
+                "
+              >
+                &nbsp;
+              </td>
+            </tr>
+          </table>
+
+          <!-- Acknowledgment -->
+          <table
+            class="acknowledgement"
+            style="border-collapse: collapse; border-spacing: 0"
+          >
+            <tr>
+              <td
+                width="300"
+                height="1"
+                class="border"
+                style="
+                  padding: 0;
+                  padding-bottom: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  color: #111111;
+                  font-size: 1px;
+                  -webkit-text-size-adjust: none;
+                  border: none;
+                  border-top: 1px solid #111111;
+                  vline-height: 1px;
+                "
+              >
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td
+                height="1"
+                class="spacer-10"
+                style="
+                  padding: 0;
+                  padding-bottom: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  color: #111111;
+                  font-size: 12px;
+                  -webkit-text-size-adjust: none;
+                  line-height: 12px;
+                "
+              >
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  padding: 0;
+                  padding-top: 1px;
+                  margin: 0;
+                  vertical-align: top;
+                  font-family: Helvetica, Arial, Sans-Serif;
+                  font-size: 11px;
+                  -webkit-text-size-adjust: none;
+                "
+              >
+                <span
+                  class="text-medium"
+                  style="
+                    font-family: Helvetica, Arial, Sans-Serif;
+                    color: #111111;
+                    font-size: 11px;
+                    -webkit-text-size-adjust: none;
+                    line-height: 150%;
+                  "
+                  >We acknowledge the Gadigal people of the Eora Nation as the
+                  traditional custodians of the land upon which the Pollen
+                  studio operates.</span
+                >
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </main>
+    <script>
+      const detailsForm = document.getElementById("details-form");
+      const nameContainer = document.getElementById("name-value");
+      const jobTitleContainer = document.getElementById("job-title-value");
+      const mobileContainer = document.getElementById("mobile-value");
+
+      detailsForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(event.target);
+        const mobile = formData.get("mobile-input");
+
+        // Update name and job title
+        nameContainer.innerHTML = formData.get("name-input");
+        jobTitleContainer.innerHTML = formData.get("job-title-input");
+
+        // Add mobile
+        if (mobile) {
+          mobileContainer.innerHTML = `M ${mobile} &mdash; ${mobileContainer.innerHTML}`;
+        }
+      });
+    </script>
+  </body>
+</html>
